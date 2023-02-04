@@ -16,10 +16,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     $meterial = Material::with('products')->get();
-//     dd( $meterial->toArray());
+//    $meterial = Material::find(1);
+//    $meterial->products()->attach([1,2]);
 // });
+
+// Route::get('/', function () {
+//    $products = Product::find(1);
+//    $products->getmetarial()->attach([1,2]);
+// });
+
 Route::get('/', function () {
-    $product = Product::with('getmetarial')->get();
-    dd( $product->toArray());
+    $meterial = Material::with('products')->get();
+    dd( $meterial->toArray());
 });
+
+
+// Route::get('/', function () {
+//     $product = Product::with('getmetarial')->get();
+//     dd( $product->toArray());
+// });
